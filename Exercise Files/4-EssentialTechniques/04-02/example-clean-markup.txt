@@ -1,0 +1,9 @@
+
+<div class="widget">
+	<h2 class="widget-title">Clean markup widget</h2>
+	<ul>
+		<li>Whatever</li>
+		<li>More Something</li>
+		<li>And another thing</li>
+	</ul>
+</div>

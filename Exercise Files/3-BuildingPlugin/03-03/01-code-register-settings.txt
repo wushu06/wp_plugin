@@ -1,0 +1,23 @@
+// register plugin settings
+function myplugin_register_settings() {
+	
+	/*
+	
+	register_setting( 
+		string   $option_group, 
+		string   $option_name, 
+		callable $sanitize_callback
+	);
+	
+	*/
+	
+	register_setting( 
+		'myplugin_options', 
+		'myplugin_options', 
+		'myplugin_callback_validate_options' 
+	); 
+
+}
+add_action( 'admin_init', 'myplugin_register_settings' );
+
+

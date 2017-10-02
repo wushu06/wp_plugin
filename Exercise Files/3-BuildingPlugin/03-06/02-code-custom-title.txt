@@ -1,0 +1,18 @@
+
+// custom login logo title
+function myplugin_custom_login_title( $title ) {
+	
+	$options = get_option( 'myplugin_options', myplugin_options_default() );
+	
+	if ( isset( $options['custom_title'] ) && ! empty( $options['custom_title'] ) ) {
+		
+		$title = esc_attr( $options['custom_title'] );
+		
+	}
+	
+	return $title;
+	
+}
+add_filter( 'login_headertitle', 'myplugin_custom_login_title' );
+
+

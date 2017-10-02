@@ -1,0 +1,26 @@
+	/*
+	
+	add_settings_section( 
+		string   $id, 
+		string   $title, 
+		callable $callback, 
+		string   $page
+	);
+	
+	*/
+	
+	add_settings_section( 
+		'myplugin_section_login', 
+		'Customize Login Page', 
+		'myplugin_callback_section_login', 
+		'myplugin'
+	);
+	
+	add_settings_section( 
+		'myplugin_section_admin', 
+		'Customize Admin Area', 
+		'myplugin_callback_section_admin', 
+		'myplugin'
+	);
+
+

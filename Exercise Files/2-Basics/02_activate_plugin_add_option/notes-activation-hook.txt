@@ -1,0 +1,41 @@
+====================================
+Notes for register_activation_hook()
+====================================
+
+
+
+* register_activation_hook() must be called from within the main plugin file.
+
+
+
+* register_activation_hook() must not be registered from within another hook (e.g., "plugins_loaded" or "init"), because such hooks are called before the plugin is activated.
+
+
+
+* If the activation callback function is located in any file other than the main plugin file, you can include the file before registering with the activation hook, for example:
+
+	include_once dirname( __FILE__ ) . '/includes/activation.php';
+	register_activation_hook( __FILE__, 'myplugin_activation_function' );
+
+
+
+* If building a plugin for WP Multisite, it is better to use the "admin_init" hook. More info:
+
+	https://core.trac.wordpress.org/ticket/14170#comment:68)
+
+
+
+* Never echo/print anything for any of these three hooks:
+
+	register_activation_hook()
+	register_deactivation_hook()
+	register_uninstall_hook()
+
+
+
+* Learn more about register_activation_hook():
+
+	https://codex.wordpress.org/Function_Reference/register_activation_hook
+	https://developer.wordpress.org/reference/functions/register_activation_hook/
+
+

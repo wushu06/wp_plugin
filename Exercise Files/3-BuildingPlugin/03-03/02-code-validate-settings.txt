@@ -1,0 +1,10 @@
+// validate plugin settings
+function myplugin_validate_options($input) {
+	
+	// todo: add validation functionality..
+	
+	return $input;
+	
+}
+
+

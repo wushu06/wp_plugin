@@ -1,0 +1,27 @@
+
+// custom toolbar items
+function myplugin_custom_admin_toolbar() {
+	
+	$toolbar = false;
+	
+	$options = get_option( 'myplugin_options', myplugin_options_default() );
+	
+	if ( isset( $options['custom_toolbar'] ) && ! empty( $options['custom_toolbar'] ) ) {
+		
+		$toolbar = (bool) $options['custom_toolbar'];
+		
+	}
+	
+	if ( $toolbar ) {
+		
+		global $wp_admin_bar;
+		
+		$wp_admin_bar->remove_menu( 'comments' );
+		$wp_admin_bar->remove_menu( 'new-content' );
+		
+	}
+	
+}
+add_action( 'wp_before_admin_bar_render', 'myplugin_custom_admin_toolbar', 999 );
+
+

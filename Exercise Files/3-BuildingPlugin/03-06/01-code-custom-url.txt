@@ -1,0 +1,18 @@
+
+// custom login logo url
+function myplugin_custom_login_url( $url ) {
+	
+	$options = get_option( 'myplugin_options', myplugin_options_default() );
+	
+	if ( isset( $options['custom_url'] ) && ! empty( $options['custom_url'] ) ) {
+		
+		$url = esc_url( $options['custom_url'] );
+		
+	}
+	
+	return $url;
+	
+}
+add_filter( 'login_headerurl', 'myplugin_custom_login_url' );
+
+

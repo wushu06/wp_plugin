@@ -1,0 +1,22 @@
+
+// custom admin color scheme
+function myplugin_custom_admin_scheme( $user_id ) {
+	
+	$scheme = 'default';
+	
+	$options = get_option( 'myplugin_options', myplugin_options_default() );
+	
+	if ( isset( $options['custom_scheme'] ) && ! empty( $options['custom_scheme'] ) ) {
+		
+		$scheme = sanitize_text_field( $options['custom_scheme'] );
+		
+	}
+	
+	$args = array( 'ID' => $user_id, 'admin_color' => $scheme );
+	
+	wp_update_user( $args );
+	
+}
+add_action( 'user_register', 'myplugin_custom_admin_scheme' );
+
+

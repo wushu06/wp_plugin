@@ -1,0 +1,19 @@
+
+	$args = array(
+		'method'      => 'GET',
+		'timeout'     => 10,
+		'redirection' => 5,
+		'httpversion' => '1.1',
+		'user-agent'  => 'Plugin Demo: HTTP API; '. home_url(),
+		'blocking'    => true,
+		'headers'     => array(),
+		'cookies'     => array(),
+		'body'        => null,
+		'compress'    => false,
+		'decompress'  => true,
+		'sslverify'   => true,
+		'stream'      => false,
+		'filename'    => null
+	);
+
+

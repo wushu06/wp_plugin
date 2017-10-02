@@ -1,0 +1,17 @@
+// callback: login section
+function myplugin_callback_section_login() {
+	
+	echo '<p>These settings enable you to customize the WP Login screen.</p>';
+	
+}
+
+
+
+// callback: admin section
+function myplugin_callback_section_admin() {
+	
+	echo '<p>These settings enable you to customize the WP Admin Area.</p>';
+	
+}
+
+
